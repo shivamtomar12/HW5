@@ -61,6 +61,7 @@ class MoviesController < ApplicationController
 
   def search_tmdb
 	searchmovie=params[:movie]
+        puts "hello #{searchmovie}"
         @moviename=searchmovie[:search]
 	
 	returnvalue= Movie::find_in_tmdb @moviename
