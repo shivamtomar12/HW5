@@ -12,8 +12,9 @@ class Movie < ActiveRecord::Base
 	 return 0
     else
 	 Tmdb::Api.key("f4702b08c0ac6ea5b51425788bb26562")
-	 
+
 	 moviesrecord=Tmdb::Movie.find(moviename)
+
 	 if moviesrecord==nil or moviesrecord==[]
            return 1
          else
