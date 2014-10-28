@@ -25,5 +25,12 @@ RSpec.describe MoviesController, :type => :controller do
         assigns(:movies).should ==@fake
       end
     end
+ describe '#add_tmdb' do
+   it 'should add the selected movies into the database and render them on the view' do
+     Movie.should_receive(:create_from_tmdb).with(["295831"]).and_return(@fake)
+     post :add_tmdb, {"tmdb_movies"=>{"295831"=>"1"}}
+    end
+   
+ end
  
 end
