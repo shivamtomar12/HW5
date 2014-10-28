@@ -11,7 +11,7 @@ RSpec.describe MoviesController, :type => :controller do
      post :search_tmdb, {:movie => {:search => '1408'}}
     end
    end
-   describe 'after valid search' do
+   describe 'Post searching the movie' do
       before :each do
         Movie.stub(:find_in_tmdb).and_return(@fake)
         post :search_tmdb, {:movie => {:search => '1408'}}
